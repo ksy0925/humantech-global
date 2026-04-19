@@ -1,0 +1,262 @@
+/* 1. 디자인 시스템 설정 */
+:root {
+    --primary-color: #ff4757;    /* 강조 색상 (레뷰 레드/주황) */
+    --secondary-color: #2d3436;  /* 배너 배경 색상 */
+    --bg-light: #f4f7fa;         /* 전체 배경 색상 */
+    --text-main: #333333;        /* 기본 글자 색상 */
+    --text-muted: #666666;       /* 부가 설명 글자 색상 */
+    --border-color: #eeeeee;     /* 테두리 색상 */
+}
+
+/* 2. 기본 레이아웃 설정 */
+* {
+    box-sizing: border-box;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* 모든 링크의 기본 밑줄 제거 */
+a {
+    text-decoration: none;
+}
+
+/* 3. 상단 네비게이션 (GNB) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    height: 72px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu a {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-menu a.active {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* 네비게이션 우측 버튼 영역 */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 로그인 버튼 (테두리 박스 스타일) */
+.login-link {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.login-link:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+/* 회원가입 버튼 (색상이 채워진 박스 스타일) */
+.signup-btn {
+    background: var(--primary-color);
+    color: #ffffff;
+    border: 1px solid var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: #e33b4a;
+    border-color: #e33b4a;
+}
+
+/* 4. 메인 비주얼 배너 */
+.main-banner {
+    background: var(--secondary-color);
+    color: white;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.main-banner h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    background: #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 16px 25px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+/* 5. 채널 탭 메뉴 */
+.channel-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+    padding: 8px 24px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #333333;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+/* 6. 레이아웃 & 필터 사이드바 */
+.container {
+    display: flex;
+    padding: 40px 10%;
+    gap: 40px;
+}
+
+.filter-section {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.filter-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* 7. 메인 리스트 및 카드 디자인 */
+.content {
+    flex-grow: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
