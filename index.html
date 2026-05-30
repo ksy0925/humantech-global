@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="vHF6X-P78ye1HWaZpXoS0mKrcKAnaBtzFiMDPex-jSo" />
-    <title>Influence Hub | 인플루언서 마케팅의 시작</title>
+    <title>휴먼테크 글로벌 | 인플루언서 마케팅 플랫폼</title>
+    
+    <meta name="description" content="딱 맞는 인플루언서를 가장 빠르게 연결하는 마케팅 플랫폼, 휴먼테크 글로벌입니다. 캠페인 목록과 커뮤니티를 확인하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="휴먼테크 글로벌 | 인플루언서 마케팅 플랫폼">
+    <meta property="og:description" content="검증된 데이터로 인플루언서 검색 및 마케팅 성과를 확인하세요.">
+    <meta property="og:url" content="https://humantech-global.vercel.app/">
+    <meta name="google-site-verification" content="vHF6X-P78ye1HWazZpXoS0mKrCKAnaBtzFiMDPex-jSo" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "휴먼테크 글로벌",
+      "url": "https://humantech-global.vercel.app/",
+      "description": "인플루언서 검색, 캠페인 목록 제공 및 마케터 커뮤니티 플랫폼"
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,11 +29,11 @@
 
     <nav class="navbar">
         <div class="nav-left">
-            <div class="logo">휴먼테크 글로벌</div>
+            <div class="logo" id="nav-logo" style="cursor: pointer;">휴먼테크 글로벌</div>
             <ul class="nav-menu">
-                <li><a href="#" class="active">인플루언서 검색</a></li>
-                <li><a href="#">캠페인 목록</a></li>
-                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#" class="nav-menu-item active" data-target="page-home">인플루언서 검색</a></li>
+                <li><a href="#" class="nav-menu-item" data-target="page-campaign">캠페인 목록</a></li>
+                <li><a href="#" class="nav-menu-item" data-target="page-community">커뮤니티</a></li>
             </ul>
         </div>
         <div class="nav-right">
@@ -25,55 +42,155 @@
         </div>
     </nav>
 
-    <header class="main-banner">
-        <div class="banner-content">
-            <h1>딱 맞는 인플루언서를<br>가장 빠르게 연결해 드립니다.</h1>
-            <p>검증된 데이터로 마케팅 성과를 확인하세요.</p>
-            <div class="search-bar">
-                <input type="text" placeholder="관심 키워드나 인플루언서 이름을 검색해보세요.">
-                <button><i class="fa fa-search"></i></button>
+    <div id="page-home" class="page-content">
+        <header class="main-banner">
+            <div class="banner-content">
+                <h1>딱 맞는 인플루언서를<br>가장 빠르게 연결해 드립니다.</h1>
+                <p>검증된 데이터로 마케팅 성과를 확인하세요.</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="관심 키워드나 인플루언서 이름을 검색해 보세요.">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <div class="channel-tabs-container">
+            <div class="channel-tabs">
+                <button class="tab active">
+                    <i class="fas fa-th-large"></i>
+                    <span>전체</span>
+                </button>
+                <button class="tab">
+                    <i class="fas fa-utensils"></i>
+                    <span>임시1</span>
+                </button>
+                <button class="tab">
+                    <i class="fas fa-tshirt"></i>
+                    <span>임시2</span>
+                </button>
+                <button class="tab">
+                    <i class="fas fa-laptop"></i>
+                    <span>임시3</span>
+                </button>
+                <button class="tab">
+                    <i class="fas fa-plane"></i>
+                    <span>임시4</span>
+                </button>
+                <button class="tab">
+                    <i class="fas fa-magic"></i>
+                    <span>임시5</span>
+                </button>
+                <button class="tab">
+                    <i class="fas fa-home"></i>
+                    <span>임시6</span>
+                </button>
+                <button class="tab">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>임시7</span>
+                </button>
             </div>
         </div>
-    </header>
 
-    <div class="channel-tabs">
-        <button class="tab active">전체</button>
-        <button class="tab">인스타그램</button>
-        <button class="tab">블로그</button>
-        <button class="tab">유튜브</button>
-    </div>
-
-    <div class="container">
-        <aside class="filter-section">
-            <div class="filter-item">
-                <h4>카테고리</h4>
-                <ul>
-                    <li><input type="checkbox" id="c1"> <label for="c1">뷰티/패션</label></li>
-                    <li><input type="checkbox" id="c2"> <label for="c2">맛집/여행</label></li>
-                    <li><input type="checkbox" id="c3"> <label for="c3">IT/테크</label></li>
-                    <li><input type="checkbox" id="c4"> <label for="c4">생활/라이프</label></li>
-                </ul>
-            </div>
-            <div class="filter-item">
-                <h4>팔로워 규모</h4>
-                <select>
-                    <option>전체</option>
-                    <option>1만 이하</option>
-                    <option>1만 ~ 10만</option>
-                    <option>10만 이상</option>
-                </select>
-            </div>
-        </aside>
-
-        <main class="content">
-            <div class="list-header">
-                <p>총 <strong>1,250명</strong>의 인플루언서</p>
-            </div>
-            <div id="influencer-grid" class="grid">
+        <div class="container">
+            <aside class="filter-section">
+                <div class="filter-item"><h3>카테고리</h3></div>
+                <div class="filter-item"><h3>지역</h3></div>
+            </aside>
+            <main class="content">
+                <div class="grid">
+                    <article class="card">
+                        <img src="https://via.placeholder.com/260x200" alt="이미지" class="card-img">
+                        <div class="card-body">
+                            <h3>인플루언서 1</h3>
+                            <p>소개글입니다. 인플루언서에 대한 설명이 들어갑니다.</p>
+                            <button class="contact-btn">상세보기</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://via.placeholder.com/260x200" alt="이미지" class="card-img">
+                        <div class="card-body">
+                            <h3>인플루언서 2</h3>
+                            <p>소개글입니다. 인플루언서에 대한 설명이 들어갑니다.</p>
+                            <button class="contact-btn">상세보기</button>
+                        </div>
+                    </article>
                 </div>
-        </main>
+            </main>
+        </div>
     </div>
 
-    <script src="main.js"></script>
+    <div id="page-campaign" class="page-content" style="display: none; min-height: calc(100vh - 72px); background: #f4f7fa;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            <h2 style="font-size: 2rem; color: #2d3436; margin-bottom: 10px;">🔥 진행 중인 캠페인 목록</h2>
+            <p style="color: #666; margin-bottom: 40px;">다양한 브랜드의 캠페인에 참여하고 리워드를 받아보세요.</p>
+            
+            <div class="grid">
+                <article class="card">
+                    <img src="https://via.placeholder.com/260x200/ff4757/ffffff?text=Beauty+Campaign" alt="캠페인" class="card-img">
+                    <div class="card-body">
+                        <h3>[뷰티] 신상 수분크림 SNS 리뷰어 모집</h3>
+                        <p>모집 인원: 20명 | 제공 상품: 수분크림 본품</p>
+                        <button class="contact-btn" style="background: #ff4757; color: white; border: none;">신청하기</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-community" class="page-content" style="display: none; min-height: calc(100vh - 72px); background: #f4f7fa;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            <h2 style="font-size: 2rem; color: #2d3436; margin-bottom: 10px;">💬 마케터 & 인플루언서 커뮤니티</h2>
+            <p style="color: #666; margin-bottom: 40px;">자유롭게 소통하고 마케팅 팁을 공유하는 공간입니다.</p>
+            
+            <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                <h4 style="margin: 0 0 10px 0; color: #ff4757; font-size: 1.1rem;">[자유] 요즘 인스타그램 릴스 알고리즘 어떤가요?</h4>
+                <p style="margin: 0; font-size: 0.95rem; color: #333;">최근 들어 조회수 변동이 심한데 다들 어떠신지 궁금합니다...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>로그인</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-email">이메일</label>
+                    <input type="email" id="login-email" required placeholder="이메일을 입력하세요">
+                </div>
+                <div class="input-group">
+                    <label for="login-password">비밀번호</label>
+                    <input type="password" id="login-password" required placeholder="비밀번호를 입력하세요">
+                </div>
+                <button type="submit" class="submit-btn">로그인</button>
+            </form>
+            <p class="modal-footer-text">계정이 없으신가요? <span id="go-to-signup">회원가입</span></p>
+        </div>
+    </div>
+
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>회원가입</h2>
+            <form id="signup-form">
+                <div class="input-group">
+                    <label for="signup-name">이름/기업명</label>
+                    <input type="text" id="signup-name" required placeholder="이름을 입력하세요">
+                </div>
+                <div class="input-group">
+                    <label for="signup-email">이메일</label>
+                    <input type="email" id="signup-email" required placeholder="이메일을 입력하세요">
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">비밀번호</label>
+                    <input type="password" id="signup-password" required placeholder="비밀번호를 입력하세요(6자리 이상)">
+                </div>
+                <button type="submit" class="submit-btn">가입하기</button>
+            </form>
+            <p class="modal-footer-text">이미 계정이 있으신가요? <span id="go-to-login">로그인</span></p>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
 </body>
 </html>
