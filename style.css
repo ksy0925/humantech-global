@@ -1,6 +1,6 @@
 /* 1. 디자인 시스템 설정 */
 :root {
-    --primary-color: #ff4757;    /* 강조 색상 (레뷰 레드/주황) */
+    --primary-color: #ff4757;    /* 강조 색상 */
     --secondary-color: #2d3436;  /* 배너 배경 색상 */
     --bg-light: #f4f7fa;         /* 전체 배경 색상 */
     --text-main: #333333;        /* 기본 글자 색상 */
@@ -93,7 +93,7 @@ a {
 }
 
 /* 로그인 버튼 (테두리 박스 스타일) */
-.login-link {
+.nav-link {
     color: var(--primary-color);
     font-size: 0.9rem;
     font-weight: 600;
@@ -103,7 +103,7 @@ a {
     transition: all 0.3s ease;
 }
 
-.login-link:hover {
+.nav-link:hover {
     background: var(--primary-color);
     color: #ffffff;
 }
@@ -138,6 +138,11 @@ a {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 12px;
+}
+
+.banner-content p {
+    color: #a0a0a0;
+    margin-bottom: 24px;
 }
 
 .search-bar {
@@ -211,6 +216,15 @@ a {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
+.filter-item h3 {
+    margin-top: 0;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
 /* 7. 메인 리스트 및 카드 디자인 */
 .content {
     flex-grow: 1;
@@ -245,6 +259,17 @@ a {
     padding: 20px;
 }
 
+.card-body h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    color: var(--text-main);
+}
+
+.card-body p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
 .contact-btn {
     width: 100%;
     padding: 12px;
@@ -259,4 +284,110 @@ a {
 .contact-btn:hover {
     background: var(--primary-color);
     color: white;
+}
+
+/* 8. 모달 스타일 */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+}
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: var(--text-main);
+}
+
+.input-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.input-group input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background: #e33b4a;
+}
+
+.modal-footer-text {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 20px;
+}
+
+.modal-footer-text span {
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
 }
